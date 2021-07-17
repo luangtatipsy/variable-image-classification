@@ -1,23 +1,43 @@
 from typing import Tuple
 
-from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
-from tensorflow.keras.layers import Dense, Dropout, Flatten
+from tensorflow.keras.applications.xception import Xception
+from tensorflow.keras.layers import Dense, Dropout, Flatten, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
 
 
-def create_model(image_size: Tuple[int, int], num_classes: int) -> Model:
-    mobilenet_v2 = MobileNetV2(
+def create_fix_input_shape_model(
+    image_size: Tuple[int, int], num_classes: int
+) -> Model:
+    xception = Xception(
         input_shape=(*image_size, 3), include_top=False, weights="imagenet"
     )
-    for layer in mobilenet_v2.layers:
+    for layer in xception.layers:
         layer.trainable = False
 
-    output = mobilenet_v2.output
+    output = xception.output
 
     x = Flatten()(output)
-    x = Dense(1024, activation="relu")(x)
-    x = Dropout(0.2)(x)
+    x = Dense(256, activation="relu")(x)
+    x = Dropout(0.4)(x)
 
     prediction = Dense(num_classes, activation="softmax")(x)
 
-    return Model(inputs=mobilenet_v2.input, outputs=prediction)
+    return Model(inputs=xception.input, outputs=prediction)
+
+
+def create_variable_input_shape_model(num_classes: int) -> Model:
+    xception = Xception(
+        input_shape=(None, None, 3), include_top=False, weights="imagenet"
+    )
+    for layer in xception.layers:
+        layer.trainable = False
+
+    output = xception.output
+
+    x = GlobalAveragePooling2D()(output)
+    x = Dense(256, activation="relu")(x)
+    x = Dropout(0.4)(x)
+
+    prediction = Dense(num_classes, activation="softmax")(x)
+
+    return Model(inputs=xception.input, outputs=prediction)
