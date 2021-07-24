@@ -5,7 +5,7 @@ A repository to demonstrate handling variable input shapes for image classificat
 [Imagenette](https://github.com/fastai/imagenette) dataset with 160px version is used to demonstrated in this repository.
 ## Prerequisites
 - Python 3.8
-- wget
+- curl
 ## Setup
 0. Clone the repository
 ```sh
@@ -30,7 +30,7 @@ python -m pip install -r requirements.txt
 ### [Imagenette](https://github.com/fastai/imagenette)  
   1. Download the dataset
   ```sh
-  wget https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz
+  curl -O https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz
   ```
   2. Extract the downloaded `tgz` file
   ```sh
