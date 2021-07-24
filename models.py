@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Dense, Dropout, Flatten, GlobalAveragePoolin
 from tensorflow.keras.models import Model
 
 
-def create_fix_input_shape_model(
+def create_fixed_input_shape_model(
     image_size: Tuple[int, int], num_classes: int
 ) -> Model:
     xception = Xception(
