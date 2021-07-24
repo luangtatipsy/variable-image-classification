@@ -44,3 +44,6 @@ python -m pip install -r requirements.txt
   ```sh
   rm -f imagenette2-160.tgz
   ```
+  
+  ## License
+This repository is distributed under [MIT License](https://github.com/luangtatipsy/variable-image-classification/blob/main/LICENSE)
