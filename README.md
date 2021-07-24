@@ -45,5 +45,19 @@ python -m pip install -r requirements.txt
   rm -f imagenette2-160.tgz
   ```
   
+ ## Training an Image Classification Model
+[`train.ipynb`](https://github.com/luangtatipsy/variable-image-classification/blob/main/train.ipynb) notebook is used to train the fixed and variable input shape image classification model with the downloaded data. 
+
+## Pre-trained Model
+Pre-trained models can be download by the following... 
+- [fixed-imagenette2.h5](https://www.dropbox.com/s/na4pn0wggcdbjjb/fixed-imagenette2.h5)
+- [variable-imagenette2.h5](https://www.dropbox.com/s/mbw0jdb86s0xw1a/variable-imagenette2.h5)
+
+or run the commands below..
+```sh
+curl -o models/fixed-imagenette2.h5 https://www.dropbox.com/s/na4pn0wggcdbjjb/fixed-imagenette2.h5
+curl -o models/fixed-imagenette2.5h https://www.dropbox.com/s/mbw0jdb86s0xw1a/variable-imagenette2.h5
+```
+  
   ## License
 This repository is distributed under [MIT License](https://github.com/luangtatipsy/variable-image-classification/blob/main/LICENSE)
