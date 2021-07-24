@@ -46,7 +46,7 @@ python -m pip install -r requirements.txt
   ```
   
  ## Training an Image Classification Model
-[`train.ipynb`](https://github.com/luangtatipsy/variable-image-classification/blob/main/train.ipynb) notebook is used to train the fixed and variable input shape image classification model with the downloaded data. 
+[`01-train.ipynb`](https://github.com/luangtatipsy/variable-image-classification/blob/main/01-train.ipynb) notebook is used to train the fixed and variable input shape image classification model with the downloaded data. 
 
 ## Pre-trained Model
 Pre-trained models can be download by the following... 
