@@ -5,7 +5,7 @@ A repository to demonstrate handling variable input shapes for image classificat
 [Imagenette](https://github.com/fastai/imagenette) dataset with 160px version is used to demonstrated in this repository.
 ## Prerequisites
 - Python 3.8
-- curl
+- wget
 ## Setup
 0. Clone the repository
 ```sh
@@ -30,7 +30,7 @@ python -m pip install -r requirements.txt
 ### [Imagenette](https://github.com/fastai/imagenette)  
   1. Download the dataset
   ```sh
-  curl -O https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz
+  wget https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz
   ```
   2. Extract the downloaded `tgz` file
   ```sh
@@ -53,10 +53,10 @@ Pre-trained models can be download by the following...
 - [fixed-imagenette2.h5](https://www.dropbox.com/s/na4pn0wggcdbjjb/fixed-imagenette2.h5)
 - [variable-imagenette2.h5](https://www.dropbox.com/s/mbw0jdb86s0xw1a/variable-imagenette2.h5)
 
-or run the commands below..
+Place the models to `models` directory or run the commands below..
 ```sh
-curl -o models/fixed-imagenette2.h5 https://www.dropbox.com/s/na4pn0wggcdbjjb/fixed-imagenette2.h5
-curl -o models/fixed-imagenette2.5h https://www.dropbox.com/s/mbw0jdb86s0xw1a/variable-imagenette2.h5
+wget https://www.dropbox.com/s/na4pn0wggcdbjjb/fixed-imagenette2.h5 -O models/fixed-imagenette2.h5
+wget https://www.dropbox.com/s/mbw0jdb86s0xw1a/variable-imagenette2.h5 -O models/variable-imagenette2.h5
 ```
   
   ## License
